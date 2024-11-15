@@ -8,19 +8,18 @@ from numpy import pi
 def cmd_group():
     pass
 
-
 @cmd_group.command()
 #@click.argument("smallangle")
-@click.option(
+@click.option(    
     "--number",
     "-n",
     default = 10
-
 )
-def sin(number):
-    """Calculate the sin of NUMBER values between 0 and 2 pi
 
-    NUMBER is the amount values between 0 and 2 pi that the sin is calculated of
+def sin(number):
+    """Calculate the sin of [NUMBER] values between 0 and 2 pi
+
+    NUMBER is the amount of values between 0 and 2 pi that the sin is calculated of
 """  
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
@@ -32,12 +31,12 @@ def sin(number):
     "--number",
     "-n",
     default = 10
-
 )
-def tan(number):
-    """Calculate the tan of NUMBER values between 0 and 2 pi
 
-       NUMBER is the amount values between 0 and 2 pi that the tan is calculated of
+def tan(number):
+    """Calculate the tan of [NUMBER] values between 0 and 2 pi
+
+       NUMBER is the amount of values between 0 and 2 pi that the tan is calculated of
     """    
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
