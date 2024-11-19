@@ -28,13 +28,12 @@ def sin(number):
 @click.option(
     "--number",
     "-n",
+    help = "amount of values betwee 0 and 2 pi",
     default = 10
 )
 
 def tan(number):
     """Calculate the tan of [NUMBER] values between 0 and 2 pi
-
-       NUMBER is the amount of values between 0 and 2 pi that the tan is calculated of
     """    
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
@@ -54,7 +53,6 @@ def approx(value):
 
     x = x - 0.001    
     print(f"Biggest angle for which the small angle approx is given: {x} rads")
-
 
 if __name__ == "__main__":
     cmd_group()
